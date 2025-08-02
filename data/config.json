@@ -1,0 +1,42 @@
+{
+  "backend_port": 8001,
+  "frontend_port": 3000,
+  "backend_host": "127.0.0.1",
+  "auto_open_browser": true,
+  "log_level": "INFO",
+  "database_path": "data/cybersec.db",
+  "stealth_features": {
+    "enabled": true,
+    "tor_available": false,
+    "proxy_rotation_available": false,
+    "advanced_obfuscation_available": true
+  },
+  "module_settings": {
+    "network_scanner": {
+      "enabled": true,
+      "default_timeout": 30,
+      "max_concurrent_scans": 5
+    },
+    "vulnerability_scanner": {
+      "enabled": true,
+      "default_depth": 2,
+      "include_external_scanners": false
+    },
+    "brute_force": {
+      "enabled": true,
+      "max_threads": 10,
+      "default_timeout": 30
+    },
+    "forensics": {
+      "enabled": true,
+      "preserve_timestamps": true,
+      "create_backups": true
+    }
+  },
+  "ui_preferences": {
+    "theme": "dark",
+    "show_advanced_options": false,
+    "enable_notifications": true,
+    "auto_refresh_interval": 5000
+  }
+}
