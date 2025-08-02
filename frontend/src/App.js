@@ -705,6 +705,7 @@ const Dashboard = ({ systemInfo, onRefresh }) => {
           {activeModule === 'stealth' && <StealthDashboard />}
           {activeModule === 'stealth-control' && <StealthControl />}
           {activeModule === 'evasion' && <EvasionDashboard />}
+          {activeModule === 'proxy-config' && <ProxyConfigManager />}
           {activeModule === 'settings' && <SettingsModule systemInfo={systemInfo} />}
         </div>
       </div>
