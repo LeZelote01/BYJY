@@ -276,6 +276,93 @@ class CyberSecBackendTester:
         """Test Tor connection test endpoint"""
         return self.run_test("Test Tor Connection", "POST", "/api/stealth-control/test-tor-connection")
 
+    # Proxy Configuration Module Tests (NEW - Priority for testing)
+    def test_proxy_config_status(self):
+        """Test proxy configuration status endpoint"""
+        return self.run_test("Proxy Config Status", "GET", "/api/proxy-config/status")
+
+    def test_proxy_config_get_config(self):
+        """Test get proxy configuration"""
+        return self.run_test("Get Proxy Config", "GET", "/api/proxy-config/config")
+
+    def test_proxy_config_tor_config(self):
+        """Test get Tor configuration"""
+        return self.run_test("Get Tor Config", "GET", "/api/proxy-config/config/tor")
+
+    def test_proxy_config_tor_update(self):
+        """Test update Tor configuration"""
+        tor_update = {
+            "enabled": True,
+            "auto_start": True,
+            "use_as_primary": False
+        }
+        return self.run_test("Update Tor Config", "POST", "/api/proxy-config/config/tor/update", 200, tor_update)
+
+    def test_proxy_config_general_update(self):
+        """Test update general proxy configuration"""
+        general_update = {
+            "use_external_proxies": True,
+            "stealth_level": 7,
+            "auto_rotate_proxies": True
+        }
+        return self.run_test("Update General Config", "POST", "/api/proxy-config/config/general/update", 200, general_update)
+
+    def test_proxy_config_external_proxies_config(self):
+        """Test get external proxies configuration"""
+        return self.run_test("Get External Proxies Config", "GET", "/api/proxy-config/config/external-proxies")
+
+    def test_proxy_config_external_proxies_update(self):
+        """Test update external proxies configuration"""
+        external_update = {
+            "enabled": True,
+            "auto_test_proxies": True,
+            "minimum_quality_score": 0.8,
+            "test_timeout": 15
+        }
+        return self.run_test("Update External Proxies Config", "POST", "/api/proxy-config/config/external-proxies/update", 200, external_update)
+
+    def test_proxy_config_proxies_list(self):
+        """Test get proxy list"""
+        return self.run_test("Get Proxy List", "GET", "/api/proxy-config/proxies/list")
+
+    def test_proxy_config_add_proxy(self):
+        """Test add external proxy"""
+        proxy_add = {
+            "proxy_url": "http://test.proxy.com:8080"
+        }
+        return self.run_test("Add Proxy", "POST", "/api/proxy-config/proxies/add", 200, proxy_add)
+
+    def test_proxy_config_remove_proxy(self):
+        """Test remove external proxy"""
+        proxy_remove = {
+            "proxy_url": "http://test.proxy.com:8080"
+        }
+        return self.run_test("Remove Proxy", "POST", "/api/proxy-config/proxies/remove", 200, proxy_remove)
+
+    def test_proxy_config_tor_status(self):
+        """Test Tor installation status"""
+        return self.run_test("Tor Status", "GET", "/api/proxy-config/tor/status")
+
+    def test_proxy_config_tor_install(self):
+        """Test Tor installation (background task)"""
+        return self.run_test("Tor Install", "POST", "/api/proxy-config/tor/install")
+
+    def test_proxy_config_reset(self):
+        """Test reset configuration to defaults"""
+        return self.run_test("Reset Config", "POST", "/api/proxy-config/config/reset")
+
+    def test_proxy_config_validate(self):
+        """Test validate current configuration"""
+        return self.run_test("Validate Config", "GET", "/api/proxy-config/validate")
+
+    def test_proxy_config_help(self):
+        """Test get configuration help"""
+        return self.run_test("Get Config Help", "GET", "/api/proxy-config/help")
+
+    def test_proxy_config_file_content(self):
+        """Test get config file content"""
+        return self.run_test("Get Config File Content", "GET", "/api/proxy-config/config/file-content")
+
     def test_performance(self):
         """Test API performance"""
         print(f"\n🚀 Performance Testing...")
