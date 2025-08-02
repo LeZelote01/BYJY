@@ -333,6 +333,9 @@ class SimpleLauncher:
             print("❌ Échec de l'installation des dépendances backend")
             return False
         
+        # Installation automatique de Tor
+        self.install_tor_automatically()
+        
         if node_available:
             if not self.install_frontend_dependencies():
                 print("⚠️ Problème avec les dépendances frontend, mais continuation...")
