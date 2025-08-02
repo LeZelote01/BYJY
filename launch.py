@@ -98,6 +98,49 @@ class SimpleLauncher:
             print(f"❌ Erreur installation backend: {e}")
             return False
 
+    def install_tor_automatically(self):
+        """Installer Tor automatiquement selon l'OS"""
+        print("🔄 Vérification et installation de Tor...")
+        
+        try:
+            # Importer le module d'installation Tor
+            sys.path.insert(0, str(self.backend_dir))
+            from tor_installer import get_tor_installer
+            
+            installer = get_tor_installer()
+            status = installer.get_installation_status()
+            
+            if status["installed"]:
+                print("✅ Tor est déjà installé et accessible")
+                if status.get("service_running"):
+                    print("✅ Service Tor en cours d'exécution sur port 9050")
+                else:
+                    print("ℹ️ Tor installé mais service non démarré (normal)")
+                return True
+            
+            print("🔄 Tor non détecté, installation automatique...")
+            print("⚠️ Selon votre OS, des privilèges administrateur peuvent être requis")
+            
+            result = installer.install_tor()
+            
+            if result["success"]:
+                print(f"✅ Tor installé avec succès via {result.get('method', 'unknown')}")
+                print("💡 Tor sera disponible pour les fonctions de proxy et d'anonymat")
+                return True
+            else:
+                print(f"⚠️ Installation automatique de Tor échouée: {result.get('message', 'Unknown error')}")
+                if "instructions" in result:
+                    print("\n💡 Instructions d'installation manuelle:")
+                    for instruction in result["instructions"]:
+                        print(f"   {instruction}")
+                print("\n💡 L'application fonctionnera sans Tor, mais les fonctions de proxy seront limitées")
+                return True  # Continue même si Tor n'est pas installé
+                
+        except Exception as e:
+            print(f"⚠️ Erreur lors de l'installation de Tor: {e}")
+            print("💡 L'application continuera sans Tor")
+            return True  # Continue même en cas d'erreur
+
     def install_frontend_dependencies(self):
         """Installe les dépendances frontend"""
         print("📦 Installation des dépendances frontend...")
