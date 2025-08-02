@@ -31,6 +31,14 @@ PySocks>=1.7.1
 requests[socks]>=2.31.0
 urllib3[socks]>=2.0.0
 
+# Tor network support and installation
+stem>=1.8.2
+toripchanger>=1.1.2
+
+# System utilities for Tor installation
+distro>=1.8.0
+packaging>=23.0
+
 # Stealth and obfuscation dependencies
 astor>=0.8.1
 python-magic
