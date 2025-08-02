@@ -252,6 +252,16 @@ except ImportError as e:
 except Exception as e:
     logger.error(f"❌ Failed to load Exploitation Framework API: {e}")
 
+# Include user proxy configuration routes
+try:
+    import proxy_user_config_api
+    app.include_router(proxy_user_config_api.router)
+    logger.info("✅ User Proxy Configuration API routes loaded")
+except ImportError as e:
+    logger.warning(f"⚠️ User Proxy Configuration API not available: {e}")
+except Exception as e:
+    logger.error(f"❌ Failed to load User Proxy Configuration API: {e}")
+
 # CORS configuration for portable use
 app.add_middleware(
     CORSMiddleware,
