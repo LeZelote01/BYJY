@@ -476,6 +476,30 @@ class CyberSecBackendTester:
         self.test_stealth_control_status()
         self.test_stealth_control_test_tor_connection()
         
+        print("\n🌐 Proxy Configuration Module Tests (PRIORITY):")
+        self.test_proxy_config_status()
+        self.test_proxy_config_get_config()
+        self.test_proxy_config_tor_config()
+        self.test_proxy_config_tor_status()
+        self.test_proxy_config_proxies_list()
+        self.test_proxy_config_external_proxies_config()
+        self.test_proxy_config_help()
+        self.test_proxy_config_validate()
+        self.test_proxy_config_file_content()
+        
+        # Configuration update tests
+        self.test_proxy_config_tor_update()
+        self.test_proxy_config_general_update()
+        self.test_proxy_config_external_proxies_update()
+        
+        # Proxy management tests
+        self.test_proxy_config_add_proxy()
+        self.test_proxy_config_remove_proxy()
+        
+        # Advanced tests
+        self.test_proxy_config_tor_install()
+        self.test_proxy_config_reset()
+        
         # Performance Tests
         self.test_performance()
         
