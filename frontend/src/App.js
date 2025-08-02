@@ -619,6 +619,7 @@ const Dashboard = ({ systemInfo, onRefresh }) => {
     { id: 'stealth', name: 'Stealth Dashboard', icon: '🕵️' },
     { id: 'stealth-control', name: 'Stealth Control', icon: '🛡️' },
     { id: 'evasion', name: 'Evasion Dashboard', icon: '🎭' },
+    { id: 'proxy-config', name: 'Proxy Configuration', icon: '🌐' },
     { id: 'settings', name: 'Settings', icon: '⚙️' }
   ];
 
