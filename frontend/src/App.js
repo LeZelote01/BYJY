@@ -10,6 +10,7 @@ import BruteForceModule from './BruteForceModule';
 import VulnerabilityScanner from './VulnerabilityScanner';
 import ForensicsModule from './ForensicsModule';
 import ExploitationModule from './ExploitationModule';
+import ProxyConfigManager from './ProxyConfigManager';
 import './App.css';
 import './EvasionDashboard.css';
 import './ForensicsModule.css';
