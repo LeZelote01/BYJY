@@ -1,0 +1,94 @@
+# Core FastAPI and server dependencies
+fastapi==0.110.1
+uvicorn==0.25.0
+python-multipart>=0.0.9
+pydantic>=2.6.4
+python-dotenv>=1.0.1
+requests>=2.31.0
+
+# Database and data processing
+aiosqlite>=0.19.0
+pandas>=2.2.0
+numpy>=1.26.0
+pymongo==4.5.0
+motor==3.3.1
+
+# Cryptography and security
+cryptography>=42.0.8
+passlib>=1.7.4
+bcrypt>=4.3.0
+pynacl>=1.5.0
+python-jose>=3.3.0
+pyjwt>=2.10.1
+
+# System monitoring and utilities
+psutil>=5.9.0
+typer>=0.9.0
+websockets>=11.0
+
+# Network and proxy functionality (ESSENTIAL FOR TOR/PROXY FEATURES)
+PySocks>=1.7.1
+requests[socks]>=2.31.0
+urllib3[socks]>=2.0.0
+
+# Tor network support and installation
+stem>=1.8.2
+toripchanger>=1.1.2
+
+# System utilities for Tor installation
+distro>=1.8.0
+packaging>=23.0
+
+# Stealth and obfuscation dependencies
+astor>=0.8.1
+python-magic
+Pillow
+
+# Network scanning dependencies
+dnspython>=2.4.0
+python-nmap>=0.7.1
+ipaddress>=1.0.23
+scapy>=2.5.0
+
+# OSINT and reconnaissance dependencies
+python-whois>=0.8.0
+builtwith>=1.3.4
+# Note: censys and shodan require API keys, making them optional
+# censys>=2.2.8
+# shodan>=1.30.1
+
+# Web analysis and vulnerability scanning
+beautifulsoup4>=4.12.0
+lxml>=5.1.0
+defusedxml>=0.7.1
+xmltodict>=0.13.0
+dateparser>=1.1.8
+
+# Configuration analysis
+PyYAML>=6.0.1
+configparser>=5.3.0
+
+# Brute force and hash cracking
+paramiko>=3.5.1
+
+# File system and forensics (Linux/Unix specific)
+# xattr  # Only needed on Linux/Unix systems
+
+# Testing and development
+pytest>=8.0.0
+black>=24.1.1
+isort>=5.13.2
+flake8>=7.0.0
+
+# Email and validation
+email-validator>=2.2.0
+
+# Time zone support
+tzdata>=2024.2
+
+# Optional cloud services (commented out as they need credentials)
+# boto3>=1.34.129
+# requests-oauthlib>=2.0.0
+
+# Additional Python utilities
+jq>=1.6.0

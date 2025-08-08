@@ -1,0 +1,50 @@
+{
+  "auto_rotation": false,
+  "rotation_interval": 50,
+  "quality_threshold": 0.7,
+  "timeout": 10,
+  "max_retries": 3,
+  "tor_enabled": false,
+  "proxy_chains": false,
+  "chain_length": 1,
+  "monitoring_enabled": false,
+  "monitoring_interval": 1800,
+  "verbose_logging": false,
+  "fetch_external_proxies": false,
+  "test_urls": [
+    "http://httpbin.org/ip",
+    "https://api.ipify.org",
+    "http://icanhazip.com"
+  ],
+  "tor_settings": {
+    "enabled": false,
+    "host": "127.0.0.1",
+    "port": 9050,
+    "control_port": 9051,
+    "auto_start": false,
+    "bridge_support": false
+  },
+  "proxy_sources": {
+    "free_proxy_list": {
+      "enabled": false,
+      "url": "https://www.proxy-list.download/api/v1/get?type=http",
+      "format": "json"
+    },
+    "custom_proxies": {
+      "enabled": false,
+      "proxies": []
+    }
+  },
+  "ui_controls": {
+    "enable_tor_toggle": true,
+    "enable_proxy_rotation_toggle": true,
+    "enable_monitoring_toggle": true,
+    "show_proxy_statistics": true,
+    "show_anonymity_status": true
+  },
+  "safety_settings": {
+    "require_confirmation_for_tor": true,
+    "auto_disable_on_detection": true,
+    "max_failed_attempts": 3
+  }
+}

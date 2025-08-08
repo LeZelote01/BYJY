@@ -1,0 +1,457 @@
+/* StealthControl.css */
+.stealth-control {
+  padding: 20px;
+  background: #0d1117;
+  color: #e6edf3;
+  min-height: 100vh;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.stealth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #00ff41;
+}
+
+.stealth-header h2 {
+  color: #00ff41;
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.active {
+  background: #00ff41;
+  box-shadow: 0 0 10px #00ff41;
+}
+
+.status-dot.inactive {
+  background: #ff4757;
+  box-shadow: 0 0 10px #ff4757;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #00ff41;
+}
+
+/* Status Section */
+.status-section {
+  background: rgba(33, 41, 54, 0.8);
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.status-section h3 {
+  color: #00ff41;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.status-item {
+  background: rgba(13, 17, 23, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #21262d;
+}
+
+.status-item label {
+  display: block;
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.status-item span {
+  color: #e6edf3;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.status-item span.warning {
+  color: #ff6b35;
+}
+
+.status-item span.success {
+  color: #00ff41;
+}
+
+.progress-bar {
+  background: rgba(33, 41, 54, 0.8);
+  border-radius: 10px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #30363d;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #ff4757 0%, #ffa726 50%, #00ff41 100%);
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 9px;
+}
+
+.progress-bar span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Tor Section */
+.tor-section {
+  background: rgba(33, 41, 54, 0.8);
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tor-section h3 {
+  color: #00ff41;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00ff41, #00d736);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(0, 255, 65, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 65, 0.4);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ff4757, #ff3742);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
+
+.btn-danger:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #3742fa, #2f3542);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(55, 66, 250, 0.3);
+}
+
+.btn-info:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(55, 66, 250, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #57606f, #2f3640);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(87, 96, 111, 0.3);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(87, 96, 111, 0.4);
+}
+
+/* Anonymity Status */
+.anonymity-status {
+  background: rgba(13, 17, 23, 0.8);
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.anonymity-status h4 {
+  color: #00ff41;
+  margin-bottom: 10px;
+}
+
+.anonymity-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.anonymity-indicator {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.anonymity-indicator.secure {
+  background: rgba(0, 255, 65, 0.2);
+  color: #00ff41;
+  border: 1px solid #00ff41;
+}
+
+.anonymity-indicator.insecure {
+  background: rgba(255, 71, 87, 0.2);
+  color: #ff4757;
+  border: 1px solid #ff4757;
+}
+
+.ip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ip-info span {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+/* Profiles Section */
+.profiles-section {
+  background: rgba(33, 41, 54, 0.8);
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.profiles-section h3 {
+  color: #00ff41;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.profile-card {
+  background: rgba(13, 17, 23, 0.8);
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 255, 65, 0.1);
+}
+
+.profile-card h4 {
+  color: #00ff41;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.profile-card p {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.profile-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.profile-details span {
+  color: #e6edf3;
+  font-size: 0.8rem;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #00ff41;
+  color: #00ff41;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #00ff41;
+  color: #000;
+}
+
+/* Help Section */
+.help-section {
+  background: rgba(33, 41, 54, 0.8);
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.help-section h3 {
+  color: #00ff41;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.installation-guide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.os-guide {
+  background: rgba(13, 17, 23, 0.8);
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.os-guide h4 {
+  color: #00ff41;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.os-guide code {
+  background: rgba(13, 17, 23, 0.9);
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 8px;
+  display: block;
+  color: #00ff41;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.os-guide p {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stealth-control {
+    padding: 15px;
+  }
+  
+  .stealth-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .control-buttons {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  .anonymity-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profiles-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .installation-guide {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.status-dot.active {
+  animation: pulse 2s infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}

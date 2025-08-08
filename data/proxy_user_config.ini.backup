@@ -1,0 +1,54 @@
+[GENERAL]
+use_external_proxies = false
+stealth_level = 5
+auto_rotate_proxies = false
+rotation_interval = 50
+
+[TOR]
+enabled = false
+auto_start = true
+use_as_primary = false
+socks_port = 9050
+control_port = 9051
+request_delay_min = 3.0
+request_delay_max = 8.0
+
+[EXTERNAL_PROXIES]
+enabled = false
+proxy_list = 
+auto_test_proxies = true
+minimum_quality_score = 0.7
+test_timeout = 10
+
+[SAFETY]
+enable_safety_checks = true
+block_if_no_proxy = false
+warn_ip_leak = true
+max_failed_attempts = 3
+auto_disable_on_detection = true
+
+[ADVANCED]
+rotate_user_agents = true
+custom_headers = {}
+enable_proxy_chaining = false
+chain_length = 2
+random_delay_max = 2.0
+use_persistent_sessions = true
+
+[tor]
+enabled = True
+auto_start = True
+use_as_primary = False
+
+[external_proxies]
+proxy_list = 
+enabled = True
+auto_test_proxies = True
+minimum_quality_score = 0.8
+test_timeout = 15
+
+[general]
+use_external_proxies = True
+stealth_level = 7
+auto_rotate_proxies = True
+
